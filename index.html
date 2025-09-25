@@ -1,1 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danilo Ferro | Consultoria de Treino e Nutrição</title>
+    <meta name="description" content="Alcance seus objetivos de transformação corporal com a consultoria online de Danilo Ferro. Treinos e planos alimentares personalizados para você.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* ========================================= */
+        /* CSS PERSONALIZADO E PADRÕES DO PROJETO    */
+        /* ========================================= */
+
+        /* Define a fonte padrão e as cores base do corpo da página */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111111;
+            color: #E0E0E0;
+        }
+
+        /* Classe utilitária para criar um efeito de gradiente em textos */
+        .text-gradient {
+            background: linear-gradient(90deg, #F66E17, #D85D10);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Definição das cores personalizadas para fácil reutilização */
+        .hover\:text-orange-custom:hover {
+            color: #F66E17;
+        }
+        .bg-orange-custom {
+            background-color: #F66E17;
+        }
+        .hover\:bg-orange-custom-dark:hover {
+            background-color: #D85D10; /* Tom mais escuro para efeito hover */
+        }
+        .text-orange-custom {
+            color: #F66E17;
+        }
+        .border-orange-custom {
+            border-color: #F66E17;
+        }
+        .shadow-orange-custom {
+             box-shadow: 0 10px 15px -3px rgba(246, 110, 23, 0.2), 0 4px 6px -4px rgba(246, 110, 23, 0.2);
+        }
+
+        /* Estilo para a imagem de fundo da seção Hero com sobreposição escura */
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('https://placehold.co/1920x1080/1a202c/ffffff?text=Foco+e+Disciplina');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Animação de entrada (fade-in) para elementos ao rolar a página */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- ========================================= -->
+    <!-- CABEÇALHO E NAVEGAÇÃO PRINCIPAL           -->
+    <!-- ========================================= -->
+    <header id="home" class="bg-black/80 backdrop-blur-sm fixed w-full z-50 shadow-lg shadow-black/20">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" aria-label="Página Inicial Danilo Ferro">
+                <!-- SVG Logo: O caminho agora aponta para a pasta padronizada de imagens. -->
+                <svg
+                    class="h-12 w-auto"
+                    viewBox="0 0 90 45"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-label="Danilo Ferro Logo"
+                >
+                    <!-- TODO: Substituir este SVG pelo seu arquivo real em 'assets/images/logo.svg' -->
+                    <defs>
+                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#F66E17;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#D85D10;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <text
+                        x="0"
+                        y="38"
+                        font-family="Inter, sans-serif"
+                        font-size="40"
+                        font-weight="900"
+                        fill="url(#logoGradient)"
+                    >
+                        DF
+                    </text>
+                </svg>
+            </a>
+            <!-- Menu para Desktop -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#sobre" class="hover:text-orange-custom transition-colors duration-300">Sobre</a>
+                <a href="#metodo" class="hover:text-orange-custom transition-colors duration-300">O Método</a>
+                <a href="#depoimentos" class="hover:text-orange-custom transition-colors duration-300">Depoimentos</a>
+                <a href="#contato" class="hover:text-orange-custom transition-colors duration-300">Contato</a>
+            </div>
+            <a href="#contato" class="hidden md:inline-block bg-orange-custom hover:bg-orange-custom-dark text-white font-bold py-2 px-6 rounded-lg transition-transform duration-300 hover:scale-105">
+                QUERO COMEÇAR
+            </a>
+            <!-- Botão do Menu Mobile -->
+            <button id="mobile-menu-button" class="md:hidden text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+        <!-- Conteúdo do Menu Mobile (escondido por padrão) -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#sobre" class="block py-2 hover:text-orange-custom">Sobre</a>
+            <a href="#metodo" class="block py-2 hover:text-orange-custom">O Método</a>
+            <a href="#depoimentos" class="block py-2 hover:text-orange-custom">Depoimentos</a>
+            <a href="#contato" class="block py-2 hover:text-orange-custom">Contato</a>
+            <a href="#contato" class="block mt-4 bg-orange-custom hover:bg-orange-custom-dark text-white font-bold py-2 px-6 rounded-lg text-center">
+                QUERO COMEÇAR
+            </a>
+        </div>
+    </header>
+    <!-- Fim do Cabeçalho -->
+
+    <main>
+        <!-- ========================================= -->
+        <!-- SEÇÃO HERO (PRINCIPAL)                    -->
+        <!-- ========================================= -->
+        <section class="hero-bg min-h-screen flex items-center pt-20">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-7xl font-black uppercase text-white tracking-wider leading-tight fade-in">
+                    CONQUISTE O FÍSICO <br>QUE <span class="text-gradient">VOCÊ MERECE</span>
+                </h1>
+                <p class="text-lg md:text-xl mt-4 max-w-3xl mx-auto text-gray-300 fade-in" style="transition-delay: 200ms;">
+                    Chega de treinos genéricos e dietas que não funcionam. Meu método é 100% personalizado para você atingir seus objetivos no menor tempo possível.
+                </p>
+                <div class="mt-8 fade-in" style="transition-delay: 400ms;">
+                    <a href="#contato" class="bg-orange-custom hover:bg-orange-custom-dark text-white font-bold py-4 px-10 rounded-lg transition-transform duration-300 hover:scale-105 text-lg shadow-lg shadow-orange-custom">
+                        QUERO MINHA TRANSFORMAÇÃO
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- Fim da Seção Hero -->
+
+        <!-- ========================================= -->
+        <!-- SEÇÃO SOBRE                               -->
+        <!-- ========================================= -->
+        <section id="sobre" class="py-20 bg-black">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/3 fade-in">
+                        <!-- TODO: Substituir pela foto real de Danilo Ferro -->
+                        <img src="https://placehold.co/600x800/2d3748/ffffff?text=Danilo+Ferro" alt="Foto de Danilo Ferro" class="rounded-lg shadow-2xl shadow-black/50 w-full">
+                    </div>
+                    <div class="md:w-2/3 fade-in" style="transition-delay: 200ms;">
+                        <h2 class="text-4xl font-bold mb-4">SOBRE <span class="text-gradient">DANILO FERRO</span></h2>
+                        <p class="mb-4 text-gray-300">
+                            Com mais de 10 anos de experiência, sou especialista em transformação corporal. Graduado em Educação Física e com pós-graduação em Nutrição Esportiva, minha missão é extrair o máximo potencial de cada aluno, combinando ciência e prática.
+                        </p>
+                        <p class="text-gray-300">
+                            Acredito que o verdadeiro resultado vem da consistência e de um plano inteligente. Não se trata apenas de suar na academia, mas de treinar com propósito e se alimentar para vencer. Criei o método DF para pessoas que, como você, valorizam seu tempo e buscam resultados reais e duradouros.
+                        </p>
+                        <ul class="mt-6 space-y-3 text-gray-300">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-orange-custom mr-3"></i>+10 anos de experiência</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-orange-custom mr-3"></i>Especialista em Hipertrofia e Emagrecimento</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-orange-custom mr-3"></i>CREF: 123456-G/SP</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Fim da Seção Sobre -->
+
+        <!-- ========================================= -->
+        <!-- SEÇÃO DE NÚMEROS (PROVA SOCIAL)           -->
+        <!-- ========================================= -->
+        <section class="py-20 bg-gray-900/50">
+            <div class="container mx-auto px-6 text-center">
+                 <h2 class="text-3xl font-bold uppercase text-white mb-10 fade-in">Junte-se ao nosso <span class="text-gradient">Time</span></h2>
+                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                     <div class="bg-black p-8 rounded-lg shadow-lg fade-in">
+                        <h3 id="counter-1" class="text-5xl font-bold text-gradient">0</h3>
+                        <p class="mt-2 text-gray-400">Transformações Concluídas</p>
+                     </div>
+                     <div class="bg-black p-8 rounded-lg shadow-lg fade-in" style="transition-delay: 200ms;">
+                        <h3 id="counter-2" class="text-5xl font-bold text-gradient">0</h3>
+                        <p class="mt-2 text-gray-400">Alunos Ativos</p>
+                     </div>
+                     <div class="bg-black p-8 rounded-lg shadow-lg fade-in" style="transition-delay: 400ms;">
+                        <h3 id="counter-3" class="text-5xl font-bold text-gradient">0</h3>
+                        <p class="mt-2 text-gray-400">Treinos Personalizados</p>
+                     </div>
+                 </div>
+            </div>
+        </section>
+        <!-- Fim da Seção de Números -->
+
+        <!-- ========================================= -->
+        <!-- SEÇÃO "O MÉTODO"                          -->
+        <!-- ========================================= -->
+        <section id="metodo" class="py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold mb-12 fade-in">COMO FUNCIONA O <span class="text-gradient">MÉTODO</span></h2>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <!-- Passo 1 -->
+                    <div class="bg-black p-8 rounded-lg border border-gray-800 shadow-lg fade-in">
+                        <div class="text-4xl text-orange-custom mb-4"><i class="fas fa-clipboard-list"></i></div>
+                        <h3 class="text-xl font-bold mb-2">1. Análise Inicial</h3>
+                        <p class="text-gray-400">Você preenche um questionário detalhado para eu entender seus objetivos, rotina e histórico.</p>
+                    </div>
+                    <!-- Passo 2 -->
+                    <div class="bg-black p-8 rounded-lg border border-gray-800 shadow-lg fade-in" style="transition-delay: 200ms;">
+                        <div class="text-4xl text-orange-custom mb-4"><i class="fas fa-cogs"></i></div>
+                        <h3 class="text-xl font-bold mb-2">2. Plano Personalizado</h3>
+                        <p class="text-gray-400">Desenvolvo um plano de treino e nutrição exclusivo para você, entregue via aplicativo.</p>
+                    </div>
+                    <!-- Passo 3 -->
+                    <div class="bg-black p-8 rounded-lg border border-gray-800 shadow-lg fade-in" style="transition-delay: 400ms;">
+                        <div class="text-4xl text-orange-custom mb-4"><i class="fas fa-mobile-alt"></i></div>
+                        <h3 class="text-xl font-bold mb-2">3. Acompanhamento</h3>
+                        <p class="text-gray-400">Ajustamos seu plano semanalmente com base no seu feedback e evolução. Suporte via WhatsApp.</p>
+                    </div>
+                    <!-- Passo 4 -->
+                    <div class="bg-black p-8 rounded-lg border border-gray-800 shadow-lg fade-in" style="transition-delay: 600ms;">
+                        <div class="text-4xl text-orange-custom mb-4"><i class="fas fa-trophy"></i></div>
+                        <h3 class="text-xl font-bold mb-2">4. Resultados Reais</h3>
+                        <p class="text-gray-400">Com disciplina e o plano certo, você alcança resultados que nunca imaginou serem possíveis.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Fim da Seção "O Método" -->
+
+        <!-- ========================================= -->
+        <!-- SEÇÃO DE DEPOIMENTOS                      -->
+        <!-- ========================================= -->
+        <section id="depoimentos" class="py-20 bg-gray-900/50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-12 fade-in">O QUE MEUS <span class="text-gradient">ALUNOS DIZEM</span></h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Depoimento 1 -->
+                    <div class="bg-black p-8 rounded-lg border border-gray-800 shadow-lg flex flex-col items-center text-center fade-in">
+                        <!-- TODO: Substituir pela foto real do cliente -->
+                        <img src="https://placehold.co/100x100/e2e8f0/2d3748?text=JS" class="w-24 h-24 rounded-full mb-4 border-4 border-orange-custom" alt="Foto de João Silva">
+                        <p class="text-gray-300 mb-4">"O Danilo mudou meu jeito de enxergar o treino. Em 3 meses, tive mais resultado do que em 2 anos treinando sozinho. O acompanhamento faz toda a diferença!"</p>
+                        <h4 class="font-bold text-lg text-white">João Silva</h4>
+                        <p class="text-orange-custom">Engenheiro</p>
+                    </div>
+                    <!-- Depoimento 2 -->
+                    <div class="bg-black p-8 rounded-lg border border-gray-800 shadow-lg flex flex-col items-center text-center fade-in" style="transition-delay: 200ms;">
+                        <!-- TODO: Substituir pela foto real do cliente -->
+                        <img src="https://placehold.co/100x100/e2e8f0/2d3748?text=MF" class="w-24 h-24 rounded-full mb-4 border-4 border-orange-custom" alt="Foto de Mariana Costa">
+                        <p class="text-gray-300 mb-4">"Nunca pensei que conseguiria ter uma rotina de treinos com meu trabalho agitado. O plano do Danilo foi flexível e os resultados apareceram rápido. Recomendo!"</p>
+                        <h4 class="font-bold text-lg text-white">Mariana Costa</h4>
+                        <p class="text-orange-custom">Advogada</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Fim da Seção de Depoimentos -->
+        
+        <!-- ========================================= -->
+        <!-- SEÇÃO DE CHAMADA PARA AÇÃO (CTA) FINAL    -->
+        <!-- ========================================= -->
+        <section id="contato" class="py-20 text-center">
+             <div class="container mx-auto px-6">
+                 <h2 class="text-4xl md:text-5xl font-black uppercase text-white tracking-wider leading-tight fade-in">
+                    PRONTO PARA <span class="text-gradient">COMEÇAR</span>?
+                </h2>
+                <p class="text-lg md:text-xl mt-4 max-w-3xl mx-auto text-gray-300 fade-in" style="transition-delay: 200ms;">
+                    Sua transformação começa com o primeiro passo. Clique no botão abaixo para falar comigo no WhatsApp e tirar todas as suas dúvidas.
+                </p>
+                 <div class="mt-8 fade-in" style="transition-delay: 400ms;">
+                    <!-- TODO: Substituir pelo seu número de WhatsApp -->
+                    <a href="https://wa.me/5511999999999?text=Ol%C3%A1%2C+Danilo!+Vim+do+seu+site+e+tenho+interesse+na+consultoria." target="_blank" class="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-10 rounded-lg transition-transform duration-300 hover:scale-105 text-lg shadow-lg shadow-green-500/20 inline-flex items-center">
+                        <i class="fab fa-whatsapp mr-3 text-2xl"></i>
+                        FALAR NO WHATSAPP
+                    </a>
+                </div>
+             </div>
+        </section>
+        <!-- Fim da Seção CTA -->
+
+    </main>
+
+    <!-- ========================================= -->
+    <!-- RODAPÉ                                    -->
+    <!-- ========================================= -->
+    <footer class="bg-black py-8">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <p>&copy; 2025 Danilo Ferro. Todos os direitos reservados.</p>
+            <p>Desenvolvido com foco e disciplina.</p>
+             <div class="mt-4 flex justify-center space-x-6">
+                <a href="https://www.instagram.com/dferro.treinador" target="_blank" class="text-xl hover:text-orange-custom transition-colors" aria-label="Instagram de Danilo Ferro"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-xl hover:text-orange-custom transition-colors" aria-label="Youtube de Danilo Ferro"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="text-xl hover:text-orange-custom transition-colors" aria-label="Tiktok de Danilo Ferro"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </footer>
+    <!-- Fim do Rodapé -->
+
+    <script>
+        // Adiciona um listener que executa o script apenas quando o DOM está completamente carregado.
+        // É uma boa prática para garantir que todos os elementos HTML estejam disponíveis para manipulação.
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // --- Lógica do Menu Mobile ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            // Alterna a visibilidade do menu mobile ao clicar no botão.
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Fecha o menu mobile automaticamente ao clicar em um dos links.
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // --- Lógica para Animação dos Contadores ---
+            function animateValue(obj, start, end, duration) {
+                let startTimestamp = null;
+                const step = (timestamp) => {
+                    if (!startTimestamp) startTimestamp = timestamp;
+                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                    // Atualiza o valor do elemento, formatando para o padrão brasileiro.
+                    obj.innerHTML = Math.floor(progress * (end - start) + start).toLocaleString('pt-BR');
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    }
+                };
+                window.requestAnimationFrame(step);
+            }
+
+            // --- Lógica para Animação de Fade-in ao Rolar ---
+            // Intersection Observer API é usado para detectar quando um elemento entra na tela.
+            const observerOptions = {
+                root: null, // Observa em relação à viewport.
+                rootMargin: '0px',
+                threshold: 0.1 // Ativa quando 10% do elemento está visível.
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    // Se o elemento estiver visível...
+                    if (entry.isIntersecting) {
+                        // Aplica os estilos para a animação de fade-in.
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        
+                        // Dispara a animação do contador específico quando ele se torna visível.
+                        if(entry.target.id === 'counter-1') animateValue(entry.target, 0, 1500, 2000);
+                        if(entry.target.id === 'counter-2') animateValue(entry.target, 0, 250, 2000);
+                        if(entry.target.id === 'counter-3') animateValue(entry.target, 0, 3000, 2000);
+
+                        // Para de observar o elemento após a animação para economizar recursos.
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Aplica o observador a todos os elementos com a classe 'fade-in'.
+            document.querySelectorAll('.fade-in').forEach((el) => {
+                observer.observe(el);
+            });
+
+            // Aplica o observador especificamente aos contadores.
+            const counter1 = document.getElementById('counter-1');
+            const counter2 = document.getElementById('counter-2');
+            const counter3 = document.getElementById('counter-3');
+            if (counter1) observer.observe(counter1);
+            if (counter2) observer.observe(counter2);
+            if (counter3) observer.observe(counter3);
+
+        });
+    </script>
+</body>
+
+</html>
