@@ -59,11 +59,29 @@
 
         /* Estilo para a imagem de fundo da seção Hero com sobreposição escura */
         .hero-bg {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('https://placehold.co/1920x1080/1a202c/ffffff?text=TEAM+DFERRO');
-            background-size: cover;
-            background-position: center;
+          background-image: linear-gradient(
+              rgba(0, 0, 0, 0.7),
+              rgba(0, 0, 0, 0.9)
+            ),
+                url('https://placehold.co/1680x1080/1a202c/ffffff?text=TEAM+DFERRO');
+                  background-size: cover;         /* cobre toda a área, mantendo proporção */
+                  background-position: center;    /* mantém o foco central da imagem */
+                  background-repeat: no-repeat;   /* evita repetição em telas grandes */
+                  width: 100%;                    /* garante que ocupe toda a largura */
+                  min-height: 100vh;              /* ocupa toda a altura da viewport */
+                  display: flex;                  /* útil se quiser centralizar conteúdo interno */
+                  align-items: center;
+                  justify-content: center;
         }
-
+        @media (max-width: 768px) {
+          .hero-bg {
+            background-image: linear-gradient(
+                rgba(0, 0, 0, 0.7),
+                rgba(0, 0, 0, 0.9)
+            ),
+              url('https://placehold.co/800x1200/1a202c/ffffff?text=TEAM+DFERRO');
+  }
+}   
         /* Animação de entrada (fade-in) para elementos ao rolar a página */
         .fade-in {
             opacity: 0;
